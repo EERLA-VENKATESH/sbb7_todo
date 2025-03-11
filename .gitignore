@@ -1,0 +1,15 @@
+# Ignore Eclipse and IntelliJ IDEA project files
+.classpath
+.project
+.settings/
+
+# Ignore compiled Java class files
+*.class
+build/
+bin/
+target/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+.DS_Store

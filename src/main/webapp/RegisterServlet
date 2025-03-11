@@ -1,0 +1,30 @@
+package com.example;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+
+@WebServlet("/RegisterServlet")  // This must match the form action in HTML
+public class RegisterServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        // Retrieve form data
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+
+        // Prepare response
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        // Display success message
+        out.println("<h2>Registration Successful</h2>");
+        out.println("<p>Username: " + username + "</p>");
+        out.println("<p>Email: " + email + "</p>");
+    }
+}
