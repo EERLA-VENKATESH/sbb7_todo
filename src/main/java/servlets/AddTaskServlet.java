@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import dao;
 
 import beans.Task;
 import dao.ToDoDAO;
@@ -32,9 +31,9 @@ public class AddTaskServlet extends HttpServlet {
     Task task=new Task(0,taskName,taskDate,taskStatus,regId);
     
     ToDoDAO dao=ToDoDAOImpl.getInstance();
-    boolean flag=dao.addTask(task, regId);
+    int i=dao.addTask(task, regId);
     
-    if(flag) {
+    if(i>0) {
       context.getRequestDispatcher("/ViewTasks.jsp").forward(request, response);
     } else {
       out.println("Tx Failed, Task not added");

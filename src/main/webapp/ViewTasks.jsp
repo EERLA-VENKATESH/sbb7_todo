@@ -52,7 +52,7 @@
   <hr/>
   
   <%
-    List<Task> tasks=dao1.findTasksByRegId(regId);
+    List<Task> tasks=dao1.findAllTasksByRegid(regId);
   %>
   <table border="1" width="50%" align="center">
     <tr>
